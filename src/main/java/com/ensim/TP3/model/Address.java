@@ -13,6 +13,8 @@ public class Address {
 	private Long id;
 	private Date creation;
 	private String content;
+	private String author;
+	
 	public Long getId() {
 		return id;
 	}
@@ -32,5 +34,22 @@ public class Address {
 		this.content = content;
 	}
 	
+	public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+    
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", creation=" + creation +
+                ", content='" + content + '\'' +
+                ", author='" + author + '\'' +
+                '}';
+    }
 	
 }
