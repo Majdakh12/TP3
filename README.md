@@ -22,4 +22,7 @@ question 19:
 oui création de la table adresse.
 
 question 20:
+oui. on voit bien la table
 
+question 22:
+L'annotation @Autowired en Spring est utilisée pour injecter automatiquement une dépendance dans une classe en utilisant le conteneur de beans Spring.
