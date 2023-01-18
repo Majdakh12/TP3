@@ -11,8 +11,15 @@ DevTools (Outils de développement) est une dépendance fournie par Spring Boot 
 
 Thymeleaf est un moteur de template open-source pour générer des pages web statiques ou dynamiques. Il peut être utilisé pour créer des modèles pour les applications web basées sur Spring. Il permet de créer des vues en utilisant des balises XML/XHTML/HTML5 standard, qui sont ensuite remplacées par des données dynamiques provenant du contrôleur. Il offre un grand nombre de fonctionnalités telles que la possibilité de créer des vues conditionnelles, des boucles, des formulaires, des liens, des commentaires, des traductions, des fragments de vue, etc. Il est compatible avec les principaux navigateurs web et prend en charge les principaux standards de l'industrie. En résumé, Thymeleaf est un moteur de template open-source qui permet de créer des vues pour les applications web basées sur Spring en utilisant des balises standard et en offrant une variété de fonctionnalités pour les formater et les afficher de manière dynamique.
 
+question 13:
 1-L'URL d'appel "/greeting" est paramétrée avec l'annotation @GetMapping("/greeting") de la méthode greeting().
 
 2-Le fichier HTML à afficher est choisi en utilisant la valeur de retour de la méthode greeting qui est "greeting". Cette valeur est utilisée comme nom de la vue pour le moteur de template.
 
 3-Le nom à qui nous disons bonjour est envoyé via le paramètre de requête "nameGET" qui est récupéré dans la méthode greeting() et ajouté à l'objet Model en utilisant l'attribut "nomTemplate" qui est utilisé par la vue pour afficher le nom de la personne à qui on souhaite dire bonjour
+
+question 19:
+oui création de la table adresse.
+
+question 20:
+
