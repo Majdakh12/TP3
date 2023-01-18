@@ -13,9 +13,8 @@ public class AddressController {
 	@Autowired
 	AddressRepository addressRepository;
 	@GetMapping("/adresses")
-	public String showAddresses(@RequestParam("searcherName") String searcherName, Model model) {
+	public String showAddresses(Model model) {
 		model.addAttribute("allAddresses", addressRepository.findAll());
-		model.addAttribute("searcherName", searcherName);
 		return "addresses";
 	}
 }
