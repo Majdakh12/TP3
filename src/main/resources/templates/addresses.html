@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Les differentes adresses</h1>
+<p th:text="'Recherche effectuée par : ' + ${searcherName}"/>
 <ul th:each="address:${allAddresses}">
 <li th:text="${address.content }" />
 </ul>
