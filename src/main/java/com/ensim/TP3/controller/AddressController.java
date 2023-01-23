@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ensim.TP3.model.Address;
 import com.ensim.TP3.model.AddressRepository;
 
 @Controller
@@ -17,4 +18,10 @@ public class AddressController {
 		model.addAttribute("allAddresses", addressRepository.findAll());
 		return "addresses";
 	}
+	
+	@GetMapping("/adress")
+    public String weatherForm(Model model) {
+        model.addAttribute("address", new Address());
+        return "meteo";
+    }
 }

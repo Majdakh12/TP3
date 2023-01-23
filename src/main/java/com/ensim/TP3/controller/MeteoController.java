@@ -18,12 +18,12 @@ public class MeteoController {
     @GetMapping("/meteo")
     public String weatherForm(Model model) {
         model.addAttribute("address", new Address());
-        return "weatherForm";
+        return "meteo";
     }
     
     @PostMapping("/meteo")
     public String weatherSubmit(@ModelAttribute Address address) {
         addressRepository.save(address);
-        return "weatherResult";
+        return "meteo";
     }
 }
