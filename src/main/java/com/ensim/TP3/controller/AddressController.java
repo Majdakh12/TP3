@@ -19,7 +19,7 @@ public class AddressController {
 		return "addresses";
 	}
 	
-	@GetMapping("/adress")
+	@GetMapping("/address")
     public String weatherForm(Model model) {
         return "formulaire";
     }

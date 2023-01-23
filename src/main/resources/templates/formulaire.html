@@ -8,7 +8,7 @@
 </head>
 <body>
     <div th:replace="./navBar.html" />
-    <form action="/meteo" method="post">
+    <form form action="#" th:action="@{/meteo}" th:object="${address}" method="post">
         <div>
             <label for="address">Please input your adress :</label>
             <input name="address" id="address">

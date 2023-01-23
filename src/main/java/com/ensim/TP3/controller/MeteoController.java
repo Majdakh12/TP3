@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ensim.TP3.model.Address;
 import com.ensim.TP3.model.AddressRepository;
@@ -15,15 +16,10 @@ public class MeteoController {
 	@Autowired
     AddressRepository addressRepository;
     
-    @GetMapping("/meteo")
-    public String weatherForm() {
-       // model.addAttribute("address", new Address());
-        return "meteo";
-    }
     
     @PostMapping("/meteo")
-    public String weatherSubmit(@ModelAttribute Address address) {
-        addressRepository.save(address);
+    public String weatherSubmit(@RequestParam(name="address", required=false) String adressGET, Model model) {
+    	model.addAttribute("adress", adressGET);
         return "meteo";
     }
 }
