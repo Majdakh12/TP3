@@ -20,10 +20,10 @@ public class MeteoController {
 	RestTemplate restTemplate = new RestTemplate();
     
     @PostMapping("/meteo")
-    public String weatherSubmit(@RequestParam(name="address", required=false) String adressGET, Model model) {
-    	ResponseEntity<MyResponse> response =  restTemplate.getForEntity("https://api-adresse.data.gouv.fr/search/?q={address}", MyResponse.class);
-        MyResponse myResponse = response.getBody();
+    public String weatherSubmit(@RequestParam(name="adress", required=false) String adressGET, Model model) {
     	model.addAttribute("adress", adressGET);
+    	ResponseEntity<MyResponse> response =  restTemplate.getForEntity("https://api-adresse.data.gouv.fr/search/?q={adress}", MyResponse.class);
+        MyResponse myResponse = response.getBody();
         return "meteo";
     }
     
