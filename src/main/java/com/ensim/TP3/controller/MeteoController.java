@@ -1,12 +1,14 @@
 package com.ensim.TP3.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
 import com.ensim.TP3.model.Address;
 import com.ensim.TP3.model.AddressRepository;
@@ -15,11 +17,15 @@ import com.ensim.TP3.model.AddressRepository;
 public class MeteoController {
 	@Autowired
     AddressRepository addressRepository;
-    
+	RestTemplate restTemplate = new RestTemplate();
     
     @PostMapping("/meteo")
     public String weatherSubmit(@RequestParam(name="address", required=false) String adressGET, Model model) {
+    	ResponseEntity<MyResponse> response =  restTemplate.getForEntity("https://api-adresse.data.gouv.fr/search/?q={address}", MyResponse.class);
+        MyResponse myResponse = response.getBody();
     	model.addAttribute("adress", adressGET);
         return "meteo";
     }
+    
+    
 }
