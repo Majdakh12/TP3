@@ -21,7 +21,6 @@ public class AddressController {
 	
 	@GetMapping("/adress")
     public String weatherForm(Model model) {
-        model.addAttribute("address", new Address());
-        return "meteo";
+        return "formulaire";
     }
 }
