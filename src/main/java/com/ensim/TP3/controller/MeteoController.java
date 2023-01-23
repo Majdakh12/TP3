@@ -16,8 +16,8 @@ public class MeteoController {
     AddressRepository addressRepository;
     
     @GetMapping("/meteo")
-    public String weatherForm(Model model) {
-        model.addAttribute("address", new Address());
+    public String weatherForm() {
+       // model.addAttribute("address", new Address());
         return "meteo";
     }
     
